@@ -6,6 +6,7 @@ class ConsultasController < ApplicationController
   def index
     @consultas = Consulta.all
     @consulta = Consulta.new usuario: current_usuario
+    @medico = Medico.find(params[:md]) if params[:md]
   end
 
   # GET /consultas/1

@@ -1,0 +1,60 @@
+<div class="col-sm-12" style="margin: auto;float: left;display: inline-block;">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h2 class="panel-title">Dados Usuários</h2>
+    </div>
+    <div class="panel-body">  
+    <%= form_for current_usuario , url: salva_usuario_path, method: :post do |f| %>  
+      <h4>Dados pessoais</h4>
+      <div class="form-group col-sm-10">
+        <%= f.label :nome %><br />
+        <%= f.text_field :nome, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-2">
+        <%= f.label :idade %><br />
+        <%= f.text_field :idade, class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= f.label :sexo %><br />
+        <%= f.text_field :sexo , class: "form-control" %>
+      </div>
+
+      <div class="form-group col-sm-6">
+        <%= f.label :cpf %><br />
+        <%= f.text_field :cpf , class: "form-control" %>
+      </div> 
+
+      <h4>Endereço</h4>
+      <div class="form-group col-sm-10">
+        <%= f.label :rua %><br />
+        <%= f.text_field :rua , class: "form-control" %>
+      </div> 
+      <div class="form-group col-sm-2">
+        <%= f.label :numero %><br />
+        <%= f.text_field :numero , class: "form-control" %>
+      </div> 
+      <div class="form-group col-sm-6">
+        <%= f.label :bairro %><br />
+        <%= f.text_field :bairro , class: "form-control" %>
+      </div> 
+      <div class="form-group col-sm-6">
+        <%= f.label :complemento %><br />
+        <%= f.text_field :complemento , class: "form-control" %>
+      </div> 
+      <div class="form-group col-sm-6">
+        <%= f.label :cidade %><br />
+        <%= f.text_field :cidade , class: "form-control" %>
+      </div> 
+      <div class="form-group col-sm-6">
+        <%= f.label :estado %><br />
+        <%= f.text_field :estado , class: "form-control" %>
+      </div> 
+
+      
+      <div><%= f.submit "Atualizar", class: "btn btn-success" %></div> 
+      <% end %> 
+    </div>  
+  </div> 
+</div>  

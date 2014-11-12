@@ -3,8 +3,12 @@ class MedicosController < ApplicationController
 
   # GET /medicos
   # GET /medicos.json
-  def index
-    @medicos = Medico.all
+  def index 
+    @medicos = Medico.all 
+    unless medico_params.nil?
+      @medicos = @medicos.where(nome: medico_params[:nome]) unless medico_params[:nome].nil? || medico_params[:nome].empty? || medico_params[:nome] == "" 
+      @medicos = @medicos.where(especialidade: medico_params[:especialidade]) unless medico_params[:especialidade].nil? || medico_params[:especialidade].empty? || medico_params[:especialidade] == "" 
+    end 
   end
 
   # GET /medicos/1
@@ -69,7 +73,7 @@ class MedicosController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def medico_params
-      params.require(:medico).permit(:nome, :especialidade, :avatar)
+    def medico_params 
+      params.require(:medico).permit(:nome, :especialidade, :avatar) if params[:medico]
     end
 end

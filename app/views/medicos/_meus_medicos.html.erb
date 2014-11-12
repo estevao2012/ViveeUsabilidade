@@ -13,7 +13,7 @@
       <td><%= medico.especialidade %></td> 
       <td><%= link_to 'Visualizar', medico %></td>
       <td><%= link_to 'Favoritar', "#" %></td> 
-      <td><%= link_to 'Marcar consulta', "#" %></td> 
+      <td><%= link_to 'Marcar consulta', "/consultas?md=#{medico.id}" %></td> 
     </tr> 
     <% end %>
   </tbody>

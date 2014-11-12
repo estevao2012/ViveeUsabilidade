@@ -30,7 +30,11 @@
 
       <div class="form-group">
         <%= f.label :medico_id, "Médico" %>
-        <%= f.select :medico_id, Medico.all.collect {|p| [ p, p.id ] } , {} , class: "form-control"  %>
+        <% 
+        opt = {} 
+        opt[:selected] = @medico.id unless @medico.nil?
+        %>
+        <%= f.select :medico_id, Medico.all.collect {|p| [ p, p.id ] } , opt , class: "form-control"  %>
       </div>
   
         <%= f.hidden_field :usuario_id, class: "form-control"  %> 

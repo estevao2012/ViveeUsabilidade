@@ -6,10 +6,10 @@ class Medico < ActiveRecord::Base
   has_many :avaliacoes, class_name: "AvaliacaMedico"
   has_many :consultas
 
-  has_attached_file :avatar, :styles => { :high => "600x600>",:medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/missing.png"
+  has_attached_file :avatar, :styles => { :high => "600x600>",:medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/missing.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  enumerize :especialidade, in: ["Ortopedista", "Pediatra", "Otorrino", "Dermatologista"] 
+  enumerize :especialidade, in: ["Ortopedista", "Pediatra", "Otorrino", "Dermatologista"]  
 
   def to_s
     "#{nome} - #{especialidade}"
@@ -21,6 +21,7 @@ class Medico < ActiveRecord::Base
       sum += single.rating
     end
 
+    return sum if sum == 0
     return sum.to_f/avaliacoes.size.to_f
   end
 end

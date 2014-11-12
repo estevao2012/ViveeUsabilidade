@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112001555) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20141112185549) do
 
   create_table "avaliaca_medicos", force: true do |t|
     t.integer  "medico_id"
@@ -73,6 +70,16 @@ ActiveRecord::Schema.define(version: 20141112001555) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome"
+    t.string   "idade"
+    t.string   "sexo"
+    t.string   "cpf"
+    t.string   "rua"
+    t.string   "numero"
+    t.string   "bairro"
+    t.string   "complemento"
+    t.string   "cidade"
+    t.string   "estado"
   end
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
