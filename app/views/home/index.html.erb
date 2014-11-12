@@ -1,0 +1,34 @@
+
+<div class="jumbotron">
+  <h1>Sistema Vivee</h1>
+  <p>Bem vindo ao sistema Vivee, você está utilizando a versão beta para teste piloto.</p> 
+</div>
+
+<div class="col-sm-6">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h3 class="panel-title">Proximas consultas </h3>
+    </div>
+    <div class="panel-body"> 
+      <div class="row">    
+        <a href="<%= consultas_path %>" class="btn btn-success" style="float:right; margin-right: 10px">Marcar consulta</a>
+        <div style="padding: 10px">
+        </div>
+      </div> 
+    </div>
+    <%= render 'consultas/proximas_consultas_paciente', consultas: @minhas_consultas %>
+  </div> 
+</div> 
+
+
+<div class="col-sm-6">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h3 class="panel-title">Médicos favoritos </h3>
+    </div>
+    <div class="panel-body">  
+      <p>Busque aqui os médicos que você mais gostou</p>
+    </div>
+    <%= render 'medicos/meus_medicos', medicos: @meus_medicos %> 
+  </div> 
+</div> 

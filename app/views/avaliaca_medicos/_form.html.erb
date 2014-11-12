@@ -1,0 +1,36 @@
+<%= form_for(@avaliaca_medico) do |f| %>
+  <% if @avaliaca_medico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@avaliaca_medico.errors.count, "error") %> prohibited this avaliaca_medico from being saved:</h2>
+
+      <ul>
+      <% @avaliaca_medico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" style="float: right;">
+    <%= f.label "Nota" %><br>
+    <%= f.number_field :rating %>
+  </div>
+
+  <div style="clear: both;"></div>
+
+  <div class="field"> 
+    <%= f.hidden_field :medico_id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :titulo %>
+    <%= f.text_field :titulo, class: "form-control"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :texto %>
+    <%= f.text_area :texto, class: "form-control"  %>
+  </div> 
+
+  <div class="actions">
+    <%= f.submit "Avaliar", class: "btn btn-success"%>
+  </div>
+<% end %>

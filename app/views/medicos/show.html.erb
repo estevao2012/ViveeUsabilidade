@@ -1,0 +1,54 @@
+<div class="col-sm-6"  style="float: left;">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h3 class="panel-title">Dr. <%= @medico.nome %></h3> 
+    </div>
+    <div class="panel-body">   
+      <div class="avatar-medico">
+        <%= image_tag @medico.avatar.url(:medium) %> 
+      </div>
+
+      <p style="float: right; font-size: 20px;"> 
+        <%= @medico.media_avaliacao %>
+      </p> 
+
+      <div style="clear: right;"></div>
+
+      <p>
+        <strong>Nome:</strong>
+        <%= @medico.nome %>
+      </p>
+
+      <p>
+        <strong>Especialidade:</strong>
+        <%= @medico.especialidade %>
+      </p> 
+    </div>
+  </div> 
+</div>
+
+<div class="col-sm-6" style="float: right;">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h3 class="panel-title">Avaliar Dr. <%= @medico.nome %></h3> 
+    </div>
+    <div class="panel-body">   
+      <%= render 'avaliaca_medicos/form' %> 
+    </div>
+  </div> 
+</div>  
+
+<div class="col-sm-6" style="float: left;">
+  <div class="panel panel-default"> 
+    <div class="panel-heading">
+      <h3 class="panel-title">Avaliações</h3> 
+    </div>
+    <div class="panel-body">    
+      <% @medico.avaliacoes.each do |c| %>
+        <h3><%= c.titulo %> <span style="float: right;"><%= c.rating %></span></h3>
+        <p><%= c.texto %></p>
+        <hr />
+      <% end %>
+    </div>
+  </div> 
+</div>

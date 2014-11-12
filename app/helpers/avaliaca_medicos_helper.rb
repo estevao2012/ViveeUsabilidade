@@ -1,0 +1,2 @@
+module AvaliacaMedicosHelper
+end

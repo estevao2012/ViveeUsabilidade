@@ -1,0 +1,6 @@
+Usuario.create(email: 'paciente@vivee.com.br', password: '12345678')
+Medico.create(nome: "João", especialidade: "Pediatra")
+Medico.create(nome: "Silvia", especialidade: "Pediatra")
+Medico.create(nome: "Marina", especialidade: "Pediatra")
+Medico.create(nome: "Lucas", especialidade: "Otorrino")
+Medico.create(nome: "Lucas", especialidade: "Dermatologista")

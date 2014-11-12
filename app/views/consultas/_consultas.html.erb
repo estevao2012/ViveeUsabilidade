@@ -1,0 +1,24 @@
+<table class="table table-striped"> 
+  <thead>
+    <tr> 
+      <th>Paciênte</th> 
+      <th>Médico</th> 
+      <th>Data</th>
+      <th>Ações</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead> 
+  <tbody>
+    <% consultas.each do |consultum| %>
+    <tr>
+      <td><%= consultum.user %></td>
+      <td><%= consultum.medico %></td>
+      <td><%= consultum.data %></td>
+      <td><%= link_to 'Visualizar', consultum %></td>
+      <td><%= link_to 'Alterar pedido', edit_consulta_path(consultum) %></td>
+      <td><%= link_to 'Cancelar consulta', consultum, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+    </tr> 
+    <% end %>
+  </tbody>
+</table>  

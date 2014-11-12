@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Medico:</strong>
+  <%= @avaliaca_medico.medico %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @avaliaca_medico.titulo %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @avaliaca_medico.texto %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @avaliaca_medico.rating %>
+</p>
+
+<%= link_to 'Edit', edit_avaliaca_medico_path(@avaliaca_medico) %> |
+<%= link_to 'Back', avaliaca_medicos_path %>

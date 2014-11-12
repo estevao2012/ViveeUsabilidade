@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  medico_id: 
+  titulo: MyString
+  texto: MyString
+  rating: 1
+
+two:
+  medico_id: 
+  titulo: MyString
+  texto: MyString
+  rating: 1

@@ -1,0 +1,31 @@
+<h1>Listing avaliaca_medicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Medico</th>
+      <th>Titulo</th>
+      <th>Texto</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avaliaca_medicos.each do |avaliaca_medico| %>
+      <tr>
+        <td><%= avaliaca_medico.medico %></td>
+        <td><%= avaliaca_medico.titulo %></td>
+        <td><%= avaliaca_medico.texto %></td>
+        <td><%= avaliaca_medico.rating %></td>
+        <td><%= link_to 'Show', avaliaca_medico %></td>
+        <td><%= link_to 'Edit', edit_avaliaca_medico_path(avaliaca_medico) %></td>
+        <td><%= link_to 'Destroy', avaliaca_medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avaliaca medico', new_avaliaca_medico_path %>
