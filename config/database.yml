@@ -30,7 +30,7 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: ebookfiat_production
+  database: vivee_production
   pool: 5
   username: vivee_fiat
   password: 3p6nS5NQ5574a5Y 
